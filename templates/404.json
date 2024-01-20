@@ -1,10 +1,9 @@
 {
-    "name":"Template 404",
-    "wrapper":"div#template_404.404_class",
+    "name":"404 Template", 
     "sections":{
-        "template":{
+        "main":{
             "type":"template-404"
         }
     },
-    "order":["template"]
+    "order":["main"]
 }

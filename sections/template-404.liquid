@@ -1,20 +1,47 @@
-<h1>{{ section.settings.title }}</h1>
-<p>{{ section.settings.subtext }}</p>
-
+<div class="max-w-md">
+    <div class="text-5xl my-5 font-bold">{{ section.settings.title }}</div>
+    <div class="my-5">
+        <p class="text-base md:text-xl leading-normal">{{ section.settings.subtext }}</p>
+    </div>
+    <div class="flex-1 mt-4">
+       {% if section.settings.button_url == blank %}
+                {% assign shop_url = shop.secure_url %}
+        {% else %}
+            {% assign shop_url = section.settings.button_url %}
+       {% endif %}
+        <a href="{{ shop_url }}" class="bg-orange-500 py-3 px-7 text-white rounded hover:bg-orange-400 transition duration-0 hover:duration-150 hover:ease-in-out">{{ section.settings.button_label }}</a>
+    </div>
+</div>
 {% schema %}
     {
         "name" : "Template 404",
-        "settings":{
-            "type":"text",
-            "id": "title",
-            "default": "404",
-            "label": "404 Heading title"
-        },
-        {
-            "type": "textarea",
-            "id": "subtext",
-            "default": "The page that you are looking is not found",
-            "label" : "404 Subtext here"
-        }
+        "tag": "section",
+        "class" : "flex justify-center text-center py-7 h-screen",
+        "settings": [
+            {
+                "type":"text",
+                "id": "title",
+                "default": "404",
+                "label": "404 Heading title"
+            },
+            {
+                "type": "textarea",
+                "id": "subtext",
+                "default": "The page that you are looking is not found",
+                "label" : "404 Subtext here"
+            },
+            {
+                "type": "text",
+                "id" : "button_label",
+                "label": "Button label",
+                "default": "Back To Home"
+            },
+            {
+                "type": "url",
+                "id": "button_url",
+                "label": "Button Url" 
+
+            }
+        ]
     }
 {% endschema %}
