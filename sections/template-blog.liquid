@@ -9,7 +9,7 @@
                                 {% if article.image %}
                                     <img src="{{ article.image |  img_url: 'medium' }}" alt="{{ article.image.alt }}" class="object-cover object-center w-full"  >
                                    {% else %}
-                                    {{ 'image' |  placeholder_svg_tag: 'w-20' }}
+                                    {{ 'image' |  placeholder_svg_tag: 'w-50' }}
                                 {% endif %}
                                 <h1> {{ article.title }} </h1>
                                 {% if article.excerpt.size > 0 %}
