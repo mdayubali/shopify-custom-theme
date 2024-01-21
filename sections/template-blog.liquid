@@ -11,13 +11,14 @@
                                    {% else %}
                                     {{ 'image' |  placeholder_svg_tag: 'w-20' }}
                                 {% endif %}
-                            </div>
-                           
-                            <h1> {{ article.title }} </h1>
+                                <h1> {{ article.title }} </h1>
                             {% if article.excerpt.size > 0 %}
+                                <p> {{ article.content | strip_html | truncatewords: 15 }} </p>
                                 {% else %}
                                     <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
                             {% endif %}
+                            </div>
+                           
                         </div>
                     {% endfor %}
                 </div>
