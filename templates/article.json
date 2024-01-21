@@ -1,15 +1,15 @@
 {
     "sections": {
-        "template":{
+        "main":{
             "type": "template-article",
             "blocks": {
                 "title":{
                     "type": "article_title"
                 },
                 "author":{
-                    "type":"author"
+                    "type":"article_author"
                 },
-                "published":{
+                "published_date":{
                     "type": "article_published_date"
                 },
                 "thumbnail":{
@@ -19,8 +19,8 @@
                     "type": "article_content"
                 }
             },
-            "block_order": ["title","author","published","thumbnail","article_content"]
+            "block_order": ["title","author","published_date","thumbnail","article_content"]
         }
     },
-    "order": ["template"]
+    "order": ["main"]
 }
