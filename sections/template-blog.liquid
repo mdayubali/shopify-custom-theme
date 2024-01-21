@@ -5,18 +5,18 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {% for article in blog.articles %}
                         <div class="w-full px-3 py-6">
-                            <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                            <div class="bg-white shadow-xl rounded-lg overflow-hidden px-3">
                                 {% if article.image %}
                                     <img src="{{ article.image |  img_url: 'medium' }}" alt="{{ article.image.alt }}" >
                                    {% else %}
                                     {{ 'image' |  placeholder_svg_tag: 'w-20' }}
                                 {% endif %}
                                 <h1> {{ article.title }} </h1>
-                            {% if article.excerpt.size > 0 %}
-                                <p> {{ article.content | strip_html | truncatewords: 15 }} </p>
-                                {% else %}
-                                    <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
-                            {% endif %}
+                                {% if article.excerpt.size > 0 %}
+                                    <p> {{ article.content | strip_html | truncatewords: 15 }} </p>
+                                    {% else %}
+                                        <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
+                                {% endif %}
                             </div>
                            
                         </div>
