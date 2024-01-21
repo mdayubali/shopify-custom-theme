@@ -7,7 +7,7 @@
                         <div class="w-full px-3 py-6">
                             <div class="bg-white shadow-xl rounded-lg overflow-hidden px-4 align-middle">
                                 {% if article.image %}
-                                    <img src="{{ article.image |  img_url: 'medium' }}" alt="{{ article.image.alt }}"   >
+                                    <img src="{{ article.image |  img_url: 'medium' }}" alt="{{ article.image.alt }}" class="object-cover object-center"  >
                                    {% else %}
                                     {{ 'image' |  placeholder_svg_tag: 'w-20' }}
                                 {% endif %}
