@@ -49,13 +49,18 @@
 </article>
 
 {% if blog.comments_enabled? %}
-    <div id="comments" class="my-8">
-        {% if article.comments_count > 0 %}
-            
-            {% else %}
-                There are no comments.
-        {% endif %}
-    </div>
+    <dev class="flex justify-center items-center">
+        <div class="max-w-5xl">
+            <div id="comments" class="my-8">
+                {% if article.comments_count > 0 %}
+
+                    {% else %}
+                        There are no comments.
+                {% endif %}
+            </div>
+        </div>
+    </dev>
+    
 {% endif %}
 
 {% schema %}
