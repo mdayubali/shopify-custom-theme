@@ -52,7 +52,18 @@
     <div class="flex-1 mx-auto justify-center items-center max-w-5xl px-3">
         <div id="comments" class="my-8">
             {% if article.comments_count > 0 %}
-
+                <div class="flex-1 mx-auto justify-center items-center max-w-5xl px-3">
+                    <h1 class="text-lg font-medium mb-4">See what people are saying</h1>
+                    {% paginate article.comments by 5 %}
+                        {% for comment in article.comments %}
+                            <div class="flex-1 my-4 px-4 py-2 sm:px-6 sm:py-4 border leading-relaxed">
+                                <span class="comment-author">{{ comment.author }}</span><span class="text-xs text-gray-400"> {{ comment.created_at | date: format: 'default' }} </span>
+                                <p class="text-sm"> {{ comment.content }} </p>
+                            </div>
+                        {% endfor %}
+                    {% endpaginate %}
+                </div>
+                
                 {% else %}
                 <div class="flex-1 items-center justify-start w-full bg-orange-500 rounded py-8 px-2">
                     <p class="text-base text-white">There are no comments.</p>
@@ -95,7 +106,7 @@
                 </div>
                 <div class="px-1 mb-3 md:flex">
                     <div class="w-full md:w-full px-3">
-                        <input type="submit" class="w-full cursor-pointer font-medium text-base text-white bg-gray-900 border px-4 py-2 hover:bg-gray-500" value="Post Comment">
+                        <input type="submit" class="w-full cursor-pointer font-medium text-base text-white bg-gray-700 border px-4 py-2 hover:bg-gray-500" value="Post Comment">
                     </div>
                 </div>
             </div>
