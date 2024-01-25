@@ -75,31 +75,30 @@
     <div id="comment_form" class="mb-8">
         {% form 'new_comment', article %}
             <div class="flex-1 mx-auto justify-center items-center max-w-5xl px-3">
-                <div class="px-1 md:flex mb-3">
+                <div class="px-1  mb-3 md:flex">
                     <div class="px-3 w-1/2">
                         <label for="comment_author" class="text-xs text-gray-700 font-medium uppercase mb-2">Name</label>
                         <input type="text"
                             name="comment[author]"
                             id="comment_author" 
-                            class="w-full text-gray-700 border px-4 py-3 mb-3 focus:outline-none" 
+                            class="w-full text-gray-700 border px-3 py-2 mb-3 focus:outline-none" 
                             placeholder="John Due"
                             required
-                            >
-                        
+                            >     
                     </div>
                     <div class="px-3 w-1/2">
                         <label for="comment_email" class="text-xs text-gray-700 font-medium uppercase mb-2">Email</label>
                         <input type="text"
                         name="comment[email]"
                         id="comment_email" 
-                        class="w-full text-gray-700 border px-4 py-3 mb-3 focus:outline-none" 
+                        class="w-full text-gray-700 border px-3 py-2 mb-3 focus:outline-none" 
                         placeholder="John@gmail.com"
                         required
                         >
                     </div>
                 </div>
                 <div class="px-1 mb-3 md:flex">
-                    <div class="w-full md:w-full px-3">
+                    <div class="w-full md:w-full px-2">
                         <label for="comment_content" class="text-gray-700 uppercase text-xs mb-2 font-medium">Comment</label>
                         <textarea class="w-full text-gray-900 resize-none h-30 py-2 px-3 focus:outline-none border" rows="10" name="comment[body]" id="comment_content" required></textarea>
                     </div>
