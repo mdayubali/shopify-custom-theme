@@ -661,6 +661,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.ml-7 {
+  margin-left: 1.75rem;
+}
+
 .block {
   display: block;
 }
@@ -763,6 +767,10 @@ video {
 
 .resize-none {
   resize: none;
+}
+
+.list-decimal {
+  list-style-type: decimal;
 }
 
 .grid-cols-1 {

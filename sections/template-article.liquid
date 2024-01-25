@@ -89,6 +89,13 @@
                                 Oh No! your comment is not posted
                             </div>
                         </div>
+                        <ul class="px-4 ml-7 list-decimal mb-3">
+                            {% for error in form.errors %}
+                                <li>
+                                    <span>{{ form.errors.messages[error] }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </div>
                     
                     {% elsif form.posted_successfully? %}
