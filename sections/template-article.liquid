@@ -26,19 +26,16 @@
                     </div>
                 </div>
                 
-            {% when 'featured_image' %}
-               
+            {% when 'featured_image' %}              
                     <div class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden my-4">
                         {% if article.image !=blank %}
                             <img src="{{ article.image | img_url: 'large'  }}"  alt="{{ article.image.alt }}" class="w-full h-80 md:h-96 object-cover object-center" >
                             {% else %}
                                 {%  assign placeholder_image = 'lifestyle-1' %}  
                                 {{ placeholder_image |  placeholder_svg_tag: 'w-full h-80 md:h-96 object-cover object-center py-5'   }}
-                        {% endif %}
-                       
+                        {% endif %}                       
                     </div>
-                </div>
-                
+                </div>                
             {% when 'article_content' %}
                 <div class="flex items-center justify-center">
                     <div class="max-w-5xl text-center">
@@ -51,6 +48,9 @@
     {% endfor %}
 </article>
 
+{% if blog.comments_enabled? %}
+    hello
+{% endif %}
 
 {% schema %}
     {
