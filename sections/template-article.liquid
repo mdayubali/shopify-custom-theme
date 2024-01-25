@@ -57,7 +57,7 @@
                     {% paginate article.comments by 5 %}
                         {% for comment in article.comments %}
                             <div class="flex-1 my-4 px-4 py-2 sm:px-6 sm:py-4 border leading-relaxed">
-                                <span class="comment-author">{{ comment.author }}</span><span class="text-xs text-gray-400"> {{ comment.created_at | date: format: 'default' }} </span>
+                                <span class="comment-author font-medium">{{ comment.author }}</span><span class="text-xs text-gray-400"> {{ comment.created_at | date: format: 'default' }} </span>
                                 <p class="text-sm"> {{ comment.content }} </p>
                             </div>
                         {% endfor %}
@@ -101,12 +101,15 @@
                 <div class="px-1 mb-3 md:flex">
                     <div class="md:w-full px-3">
                         <label for="comment_content" class="text-gray-700 uppercase text-xs mb-2 font-medium">Comment</label>
-                        <textarea class="w-full text-gray-900 resize-none h-20 py-2 px-3 focus:outline-none border" name="comment[body]" id="comment_content" required></textarea>
+                        <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..." name="comment[body]" id="comment_content" required></textarea>
                     </div>
                 </div>
-                <div class="px-1 mb-3 md:flex">
+                <div class="flex px-1 mb-3 md:flex">
                     <div class="w-full md:w-full px-3">
-                        <input type="submit" class="w-full cursor-pointer font-medium text-base text-white bg-gray-700 border px-4 py-2 hover:bg-gray-500" value="Post Comment">
+                        <input type="submit" class="w-full cursor-pointer font-medium text-base text-white bg-gray-700 border px-3 py-2 hover:bg-gray-500" value="Post Comment">
+                        <button type="submit" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+       Publish post
+   </button>
                     </div>
                 </div>
             </div>
