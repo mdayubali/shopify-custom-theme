@@ -3,7 +3,7 @@
         "template":{
             "type": "template-cart",
             "blocks": {
-                "subtotal":{
+                "sub-total":{
                     "type": "subtotal"
                 },
                 "update-button":{
@@ -13,7 +13,7 @@
                     "type": "checkout_button"
                 }
             },
-            "block_order": ["subtotal","update-button","checkout-button"]
+            "block_order": ["sub-total","update-button","checkout-button"]
         }
     },
     "order": ["template"]
