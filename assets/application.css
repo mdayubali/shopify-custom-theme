@@ -795,6 +795,10 @@ video {
   resize: none;
 }
 
+.resize {
+  resize: both;
+}
+
 .list-decimal {
   list-style-type: decimal;
 }
@@ -809,6 +813,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-end {
@@ -1331,6 +1339,10 @@ video {
 
   .md\:w-80 {
     width: 20rem;
+  }
+
+  .md\:max-w-lg {
+    max-width: 32rem;
   }
 
   .md\:flex-1 {
