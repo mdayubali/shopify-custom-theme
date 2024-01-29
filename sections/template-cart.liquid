@@ -1,6 +1,44 @@
 {% if cart.item_count > 0 %}
+    <div class="p-4">
+        <div class="max-w-6xl flex flex-col my-10 mx-auto">
+            <div class="flex items-end jutify-between my-5">
+                <h1 class="text-3xl">Your Cart</h1>
+                <a href="{{ routes.all_products_collection_url }}" class="text-blue-600 hover:text-blue-800 font-medium underline">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="max-w-6xl flex flex-col my-10 mx-auto">
+            <form action="{{ routes.cart_url }}" method="post" novalidate>
+                <table class="table-auto divide-y divide-gray-200 my-4 w-full">
+                    <thead>
+                        <td class="py-3 px-6 text-left text-sm font-medium text-gray-500">Products</td>
+                        <td class="py-3 px-6 text-left text-sm font-medium text-gray-500">Quantiry</td>
+                        <td class="py-3 px-6 text-left text-sm font-medium text-gray-500">Total Price</td>
+                    </thead>
+                    <tbody>
+                        {% for item in cart.items %}
+                            <tr class="table-row">
+                                <td>
+                                    <a href="{{ item.url }}">
+                                        {% if item.image  %}
+                                            <img src="{{ item.image | img_url: 'small' }}" alt="{{   item.title | escape }}" class="w-20 h-20 object-cover border">
+                                            {% else %}
+                                             {{ 'product-1' | placeholder_svg_tag: 'w-20 h-20 object-cover border' }}   
+                                        {% endif %}
+                                    </a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </form>
+        </div>
+
+    </div>
     {% else %}
-        <div class="max-w-6xl h-60 my-4 flex items-center justify-center">
+        <div class="max-w-6xl h-60 my-4 mx-auto flex items-center justify-center">
             <div class="text-center">
                 <h1 class="text-3xl my-4">your cart is empty</h1>
                 <div class="py-4 my-4"><a href="{{ routes.all_products_collection_url }}" class="border border-gray-600 text-white bg-gray-700 px-8 py-3">Continue Shopping</a></div>
