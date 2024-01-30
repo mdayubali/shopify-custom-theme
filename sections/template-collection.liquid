@@ -1,15 +1,21 @@
-{% paginate collection.products by 6 %}
-    {% for product in collection.products %}
-        {% if product.featured_image %}
-            <img src="{{ product.featured_image |  img_url: 'medium' }}" alt="product.featured_image.alt">
-            <span class="text-sm text-gray-400 me-2">{{ product.vendor }}</span>
-            <a href="{{ product.url }}">{{ product.title }}</a>
-            </a>
-            <p class="text-center text-gray-600">{{ product.price |  money }}</p>
-            {% else %}
-            <p>There are no products inside this collections</p>
-        {% endif %}
-        
-    {% endfor %}
-    {% render 'pagination', pagination:paginate %}
-{% endpaginate %}
+<div class="px-8 py-4">
+    {% paginate collection.products by 6 %}
+        <h1 class="text-3xl text-center">{{ collection.title }}</h1>
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {% for product in collection.products %}
+                    {% if product.featured_image %}
+                        <img src="{{ product.featured_image |  img_url: 'medium' }}" alt="product.featured_image.alt">
+                        <span class="text-sm text-gray-400 me-2">{{ product.vendor }}</span>
+                        <a href="{{ product.url }}">{{ product.title }}</a>
+                        </a>
+                        <p class="text-center text-gray-600">{{ product.price |  money }}</p>
+                        {% else %}
+                        <p>There are no products inside this collections</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>    
+        {% render 'pagination', pagination:paginate %}
+    {% endpaginate %}
+</div>
