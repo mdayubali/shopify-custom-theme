@@ -2,8 +2,10 @@
     {% for product in collection.products %}
         {% if product.featured_image %}
             <img src="{{ product.featured_image |  img_url: 'medium' }}" alt="product.featured_image.alt">
+            <span class="text-sm text-gray-400 me-2">{{ product.vendor }}</span>
             <a href="{{ product.url }}">{{ product.title }}</a>
             </a>
+            <p class="text-center text-gray-600">{{ product.price |  money }}</p>
             {% else %}
             <p>There are no products inside this collections</p>
         {% endif %}
