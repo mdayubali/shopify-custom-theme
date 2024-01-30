@@ -13,11 +13,12 @@
                                     </div>
                                 {% endif %}
                             </a>
-                            
-                                <span class="">{{ product.vendor }}</span>
-                                <a href="{{ product.url }}">{{ product.title }}</a>
+                            <div class="flex flex-col p-4">
+                                <span class="text-sm text-gray-400">{{ product.vendor }}</span>
+                                <a class="text-gray-700 uppercase" href="{{ product.url }}">{{ product.title }}</a>
                                 </a>
-                                <p class="">{{ product.price |  money }}</p>
+                                <p class="text-gray-600">{{ product.price |  money }}</p>
+                            </div>        
                         </div>
                     </div>
                     {% else %}
