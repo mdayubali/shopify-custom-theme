@@ -1,13 +1,42 @@
 <div class="flex flex-col items-center my-8">
+    {% if section.settings.title !=blank %}
+        <h1 class="text-3xl my-8 md:my-16">{{ section.settings.title }}</h1>
+    {% endif %}
     {% form 'contact' %}
         <div class="max-w-6xl mx-auto py-3">
-            {% for error in form.errors %}
-                {% if error.messages %}
-                    {{ form.errors.messages[error] }}
-                    {% else %}
-                    {{ form.errors.translated_fields[error] }} - {{ form.errors.messages[error] }}
-                {% endif %}
-            {% endfor %}
+            {% if form.errors %}
+                    
+                <div class="border p-5">
+                    <div class="flex flex-row items-center w-full my-3">
+                        <div class="text-red-500">
+                            {% render 'icon-failed' %}
+                        </div>
+                        <div class="text-sm font-medium ml-3">
+                            <p class="text-red-500">Oh No! Your Message is not Sent</p> 
+                        </div>
+                    </div>
+                    <ul class="px-4 ml-7 list-decimal mb-3">
+                        {% for error in form.errors %}
+                            <li>
+                                <span>{{ form.errors.messages[error] }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                {% elsif form.posted_successfully? %}
+                    
+                    <div class="border p-5">
+                        <div class="flex flex-row items-center w-full my-3">
+                            <div class="text-green-500">
+                                {% render 'icon-success' %}
+                            </div>
+                            <div class="text-sm font-medium ml-3">
+                                <p class="text-green-500">Your message is send successfully !</p>
+                            </div>
+                        </div>
+                    </div>
+            {% endif %}
             <div class="flex gap-4">
                 <div class="md:w-1/2">
                     <label for="contact_name" class="uppercase text-sm text-gray-400 font-medium">Name</label>
