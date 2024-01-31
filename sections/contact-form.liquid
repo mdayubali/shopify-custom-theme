@@ -20,9 +20,7 @@
                             <li>
                                 {% if error == 'form' %}
                                   <span> {{ form.errors.messages[error] }}</span>
-                                  {% else %}
-                                  <span>{{ form.errors.translated_fields[error] }} - {{ form.errors.messages[error] }}</span>
-                                  {% endif %}
+                                {% endif %}
                             </li>
                         {% endfor %}
                     </ul>
