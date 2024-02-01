@@ -1,4 +1,4 @@
-{% assign header_menu = linklists[section.settings.menus].links %}
+{% assign header_menu = linklists[section.settings.hmenus].links %}
 
 <section class="header" id="elizabeth_section_[id]">
     <div class="relative bg-white"  x-data="{ mobileMenuOpen: true }">
@@ -145,7 +145,7 @@
             {
                 "type": "link_list",
                 "label": "Select Menu",
-                "id":"menus",
+                "id":"hmenus",
                 "default": "main-menu",
                 "info": "Select Your Menu"
             }
