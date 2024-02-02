@@ -1,25 +1,33 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
+<style>
+    .swiper-button-prev, .swiper-button-next { color: black; top: auto !important; height: 20px; }
+    .swiper-button-prev::after, .swiper-button-next::after { font-size: 20px; }
+    .swiper-pagination { color: black; bottom: 0 !important; }
+    .swiper-pagination-bullet-active { background: black !important; }
+</style>
 
 <div class="max-w-6xl mx-auto my-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="product--medias">
-            <div class="hidden md:block">
+            <div class="hidden md:block lg:block">
                 {% for media in product.media %}
-                    <div class="h-100 overflow-hidden p-2">
-                        {% render 'product-media', media:media %}
+                    <div class="h-80 overflow-hidden p-2">
+                        {% render 'product-media', media: media %}
                     </div>
                 {% endfor %}
             </div>
-            <div class="">
+            <div class="md:hidden">
                 <div class="swiper h-96">
                     <div class="swiper-wrapper">
                         {% for media in product.media %}
-                            <div class="h-100 overflow-hidden p-2">
-                                {% render 'product-media', media:media %}
+                            <div class="swiper-slide">
+                                <div class="h-80 overflow-hidden p-2">
+                                    {% render 'product-media', media: media %}
+                                </div>
                             </div>
+                           
                         {% endfor %}
                     </div>
                     <div class="swiper-pagination"></div>
@@ -36,7 +44,7 @@
 <script>
     const swiper = new Swiper('.swiper', {
   // Optional parameters
-  direction: 'vertical',
+  direction: 'horizontal',
   loop: true,
 
   // If we need pagination
@@ -49,7 +57,6 @@
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
   
 });
 </script>
