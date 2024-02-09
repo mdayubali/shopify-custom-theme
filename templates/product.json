@@ -9,7 +9,7 @@
         "price":{"type": "price"},
         "quantity":{"type": "quantity"},
         "description":{"type": "description"},
-        "checkout_button":{"type": "checkout_button"},
+        "checkout_button":{"type": "checkout_button"}
       },
       "block_order": [
         "vendor",
