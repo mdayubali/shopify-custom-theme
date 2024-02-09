@@ -44,17 +44,17 @@
                 <input type="hidden" name="id" value="{{ selected_variant.id }}">
                 {% for block in section.blocks %}
                     {% case block.type %}
-                        {% when vendor %}
+                        {% when 'vendor' %}
                             <div class="my-3">
                                 <span class="text-sm text-gray-500">
                                     {{ product.vendor }}
                                 </span>
                             </div>
-                        {% when title %}
+                        {% when 'title' %}
                             <div class="my-3">
                                 <h1 class="text-3xl text-gray-900">{{ product.title }}</h1>
                             </div>
-                        {% when variant_selector %}
+                        {% when 'variant_selector' %}
                             <div class="my-3">
                                 <span class="text-base text-gray-500 line-through"> {{ selected_variant.compare_at_price | money }} </span>
                                 <span class="text-lg text-gray-900">{{ selected_variant.price | money }}</span>
@@ -85,18 +85,18 @@
                                     </div>
                                 {% endunless %}  
                             </div>
-                        {% when quantity %}
+                        {% when 'quantity' %}
                                 <div class="my-3">
                                     <label for="Quantity-{{ section.id }}">Quantity</label>
                                     <div class="my-2">
                                         <input type="number" name="quantity" id="Quantity-{{ section.id }}"   value="1" min="1" class="px-4 py-4 border w-full">
                                     </div>
                                 </div>
-                        {% when description %}
+                        {% when 'description' %}
                             <div class="my-3">
                                 <div class="text-gray-700 text-base">{{ product.description }}</div>
                             </div>
-                        {% when checkout_button %}
+                        {% when 'checkout_button' %}
                             <div class="my-3">
                                 <button type="submit" class="text-white bg-gray-900 rounded-sm w-full px-4 py-3 my-3 hover:bg-gray-700"
                                 {% if selected_variant.available == false %}
