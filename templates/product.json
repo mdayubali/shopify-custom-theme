@@ -12,8 +12,9 @@
         "checkout_button":{"type": "checkout_button"}
       },
       "block_order": [
-        "vendor",
         "title",
+        "vendor",
+        
         "variant_selector",
         "price",
         "quantity",
