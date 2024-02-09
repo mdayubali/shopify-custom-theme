@@ -1,7 +1,7 @@
 {
   "sections": {
     "template":{
-      "type": "temeplate-product",
+      "type": "template-product",
       "blocks": {
         "vendor":{"type": "vendor"},
         "title":{"type": "title"},
